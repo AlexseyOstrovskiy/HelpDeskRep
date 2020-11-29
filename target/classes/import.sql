@@ -10,3 +10,5 @@ insert into Users (id, first_name, lastname, role_id, email, password) values(4,
 insert into Users (id, first_name, lastname, role_id, email, password) values(5, 'Tirion', 'Lanister', 'EMPLOYEE','engineer1_mogilev@yopmail.com', 'P@ssword1' )
 insert into Users (id, first_name, lastname, role_id, email, password) values(6, 'Wolter', 'White', 'EMPLOYEE','engineer2_mogilev@yopmail.com', 'P@ssword1' )
 
+insert into Tickets (id, ticket_Name, description, createdOn) values(1,'wfefwfw', 'ticketDescription', 'createdOn' )
+

@@ -14,7 +14,7 @@ public class Ticket {
     @Column
     private int id;
 
-    @Column
+    @Column(name = "ticket_Name")
     private String name;
 
     @Column
@@ -24,7 +24,7 @@ public class Ticket {
     private String createdOn;
 
     @Column
-    private LocalDate desiredResolutionDate;
+    private LocalDate ticketDate;
 
     @ManyToOne
     @JoinColumn(name = "assineer_id")
@@ -68,12 +68,12 @@ public class Ticket {
     public Ticket (){
     }
 
-    public Ticket(int id, String name, String description, String createdOn, LocalDate desiredResolutionDate, User assigneerId, User ownerId, StateEnum sateId, Category categoryId, UrgencyEnum urgencyId, User approverId) {
+    public Ticket(int id, String name, String description, String createdOn, LocalDate ticketDate, User assigneerId, User ownerId, StateEnum sateId, Category categoryId, UrgencyEnum urgencyId, User approverId) {
         this.id = id;
         this.name = name;
         this.description = description;
         this.createdOn = createdOn;
-        this.desiredResolutionDate = desiredResolutionDate;
+        this.ticketDate = ticketDate;
         this.assigneerId = assigneerId;
         this.ownerId = ownerId;
         this.sateId = sateId;
@@ -117,12 +117,12 @@ public class Ticket {
         this.createdOn = createdOn;
     }
 
-    public LocalDate getDesiredResolutionDate() {
-        return desiredResolutionDate;
+    public LocalDate ticketDate() {
+        return ticketDate;
     }
 
     public void setDesiredResolutionDate(LocalDate desiredResolutionDate) {
-        this.desiredResolutionDate = desiredResolutionDate;
+        this.ticketDate = ticketDate;
     }
 
     public User getAssigneerId() {

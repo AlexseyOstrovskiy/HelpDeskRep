@@ -15,9 +15,9 @@ const RegistrationPage = (props) => {
                 <input type="text" id="password" ></input>
             </p>
             <button>Enter</button>
-            
-            <NavLink to='/next'> 
-            <button>Enter withOut registration</button>
+
+            <NavLink to='/allticket'>
+                <button>Enter withOut registration</button>
             </NavLink>
         </div>
     )

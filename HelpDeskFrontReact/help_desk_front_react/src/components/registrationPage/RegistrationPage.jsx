@@ -1,5 +1,6 @@
 import React from 'react';
 import style from './RegustrationPage.module.css';
+import { NavLink } from 'react-router-dom';
 
 const RegistrationPage = (props) => {
     return (
@@ -14,7 +15,10 @@ const RegistrationPage = (props) => {
                 <input type="text" id="password" ></input>
             </p>
             <button>Enter</button>
+            
+            <NavLink to='/next'> 
             <button>Enter withOut registration</button>
+            </NavLink>
         </div>
     )
 }

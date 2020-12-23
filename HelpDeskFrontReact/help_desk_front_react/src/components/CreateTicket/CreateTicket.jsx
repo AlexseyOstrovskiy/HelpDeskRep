@@ -4,7 +4,8 @@ import { NavLink } from 'react-router-dom';
 
 const CreateTicket = (props) => {
     return (
-        <div>
+        <div className={style.parent}>
+            <div className={style.CreateTicketMainContainer}>
             <h1>Create new Ticket!</h1>
 
             <p>
@@ -56,6 +57,7 @@ const CreateTicket = (props) => {
                 <button>Submit</button>
             </p>
 
+            </div>
         </div>
     )
 }

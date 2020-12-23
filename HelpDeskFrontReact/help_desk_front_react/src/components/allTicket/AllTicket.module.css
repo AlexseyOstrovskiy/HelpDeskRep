@@ -1,0 +1,14 @@
+.s{
+    display: grid;
+    grid-template-areas: 
+    "null button"
+    "table table"
+    ;
+    grid-template-rows: 100px 1fr;
+    grid-template-columns: 5fr 5fr;
+}
+
+
+
+
+

@@ -1,21 +1,25 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
-import TableTicket from './TableTicket/TableTicket';
+import TableWithMyTicket from './TableTicket/TableWithMyTicket/TableWithMyTicket';
+import style from './AllTicket.module.css';
+import BtnAllTicket from './BtnAllTicket/BtnAllTicket';
+import { BrowserRouter, Route } from 'react-router-dom';
 
+import CreateTicket from './../CreateTicket/CreateTicket';
+import TableWithAllTicket from './TableTicket/TableWithAllTicket/TableWithAllTicket';
+import Header from '../Header/Header';
 
 const AllTicket = (props) => {
     return (
-        <div>  
-       {/* <button>Create New Ticket</button> */}
-       <NavLink exact to='/createnewticket'>Create New Ticket</NavLink>
-       <br></br>
-       <br></br>
-       <button>All Tickets</button>
-       <button>My Tickets</button>
-       <br></br>
-       <br></br>
-    <TableTicket/>
-   </div>
+        <BrowserRouter>
+        <div className={style.s}>
+            {/* <Header /> */}
+            <BtnAllTicket/>
+            <Route exact path='/allticket' component={TableWithAllTicket}/>
+            <Route exact path='/tablewithallticket' component={TableWithAllTicket}/>
+            <Route exact path='/tablewithmyticket' component={TableWithMyTicket}/>
+            <Route exact path='/createnewticket' component={CreateTicket}/>
+        </div>
+        </BrowserRouter>
     );
 }
 

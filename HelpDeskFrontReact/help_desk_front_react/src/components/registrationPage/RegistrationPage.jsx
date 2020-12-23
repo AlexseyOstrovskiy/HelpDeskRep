@@ -1,5 +1,5 @@
 import React from 'react';
-import style from './RegustrationPage.module.css';
+import style from './RegistrationPage.module.css';
 import { NavLink } from 'react-router-dom';
 
 const RegistrationPage = (props) => {

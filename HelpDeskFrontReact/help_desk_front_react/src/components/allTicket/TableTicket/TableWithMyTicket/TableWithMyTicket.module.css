@@ -1,0 +1,8 @@
+.style{
+    width: auto;
+    height: auto;
+    color: rgb(40, 40, 247);
+    background-color: rgb(193, 121, 226);
+    grid-area: table;
+    margin: auto;
+}

@@ -1,9 +1,10 @@
 import React from 'react';
-import style from './TableTicket.module.css';
+import style from './TableWithAllTicket.module.css';
 
-const TableTicket = (props) => {
+const TableWithAllTicket = (props) => {
     return (
         <div className={style.style}>
+            <h2>Table with all ticket!</h2>
             <table border="1">
                 <tr>
                     <td>ID</td>
@@ -35,4 +36,4 @@ const TableTicket = (props) => {
     );
 }
 
-export default TableTicket;
+export default TableWithAllTicket;

@@ -3,4 +3,6 @@
     height: auto;
     color: blue;
     background-color: chartreuse;
+    grid-area: table;
+    margin: auto;
 }

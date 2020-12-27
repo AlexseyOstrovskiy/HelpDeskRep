@@ -1,13 +1,13 @@
 import React from 'react';
-import style from './CreateTicket.module.css';
+import style from './EditTicket.module.css';
 import { NavLink } from 'react-router-dom';
 
-const CreateTicket = (props) => {
+const EditTicket = (props) => {
     return (
         <div className={style.parent}>
-            <NavLink exact to='/tablewithallticket' >Ticket List</NavLink>
+            <NavLink exact to='/ticketoverview' >Ticket Overview</NavLink>
             <div className={style.CreateTicketMainContainer}>
-                <h1>Create new Ticket!</h1>
+                <h1>EditTicket!</h1>
 
                 <table >
                     <tbody>
@@ -74,4 +74,4 @@ const CreateTicket = (props) => {
     )
 }
 
-export default CreateTicket;
+export default EditTicket;

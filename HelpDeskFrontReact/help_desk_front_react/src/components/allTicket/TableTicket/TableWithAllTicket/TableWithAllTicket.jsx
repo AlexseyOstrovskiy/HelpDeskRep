@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 import style from './TableWithAllTicket.module.css';
 
 const TableWithAllTicket = (props) => {
@@ -16,7 +17,9 @@ const TableWithAllTicket = (props) => {
                 </tr>
                 <tr>
                     <td>1 1</td>
-                    <td>2 1</td>
+                    <td>
+                        <NavLink exact to='/ticketoverview'>Some ticket </NavLink>
+                    </td>
                     <td>3 1</td>
                     <td>4 1</td>
                     <td>5 1</td>
@@ -24,7 +27,9 @@ const TableWithAllTicket = (props) => {
                 </tr>
                 <tr>
                     <td>1 2</td>
-                    <td>2 2</td>
+                    <td>
+                        <NavLink exact to='/ticketoverview'>Some ticket 2 </NavLink>
+                    </td>
                     <td>3 2</td>
                     <td>4 2</td>
                     <td>5 2</td>

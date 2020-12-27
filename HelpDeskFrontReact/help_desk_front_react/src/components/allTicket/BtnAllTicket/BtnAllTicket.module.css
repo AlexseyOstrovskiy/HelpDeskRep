@@ -9,11 +9,11 @@
     background-color: chartreuse;
 }
 
-.AllTicket{
-    border: 2px solid #1900ff; /* Параметры рамки */
+.AllButton{
+    border: 2px solid #1900ff; 
     border-radius: 10px;
-    background: #00ffc8; /* Цвет фона */
-    font-size: 14px; /* Размер текста */
-    padding: 5px 20px; /* Поля вокруг текста */
+    background: #00ffc8; 
+    font-size: 14px; 
+    padding: 5px 20px; 
     margin: 10px 10px 10px 10px;
 }

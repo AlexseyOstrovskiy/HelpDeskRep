@@ -10,25 +10,17 @@ const TicketOverview = (props) => {
        <div className={style.maincontainer}>
            TicketOverview
            <p>
-               <NavLink to='/allticket'>Ticket List</NavLink>
+               <NavLink to='/allticket' className={style.AllButton}>Ticket List</NavLink>
            </p>
            <p>
-           <NavLink to='/edit'>Edit</NavLink>
+           <NavLink to='/edit' className={style.AllButton}>Edit</NavLink>
            </p>
            <p>
-           <NavLink to='/leavefeedback'>Leave Feedback</NavLink>
+           <NavLink to='/history' className={style.AllButton}>History</NavLink>
            </p>
            <p>
-           <NavLink to='/history'>History</NavLink>
-           {/* <button>History</button> */}
+           <NavLink to='/comments' className={style.AllButton}>Comments</NavLink>
            </p>
-           <p>
-           {/* <button>Comments</button> */}
-           <NavLink to='/comments'>Comments</NavLink>
-           </p>
-           {/* <Route exact path='/history' component={TicketOverviewHistory}/>
-           <Route exact path='/comments' component={TicketOverviewComments}/> */}
-           {/* <TicketOverviewHistory/> */}
 
        </div>
    

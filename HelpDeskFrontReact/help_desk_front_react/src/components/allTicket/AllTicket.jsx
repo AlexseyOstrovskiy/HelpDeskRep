@@ -12,6 +12,7 @@ import EditTicket from './../EditTicket/EditTicket';
 import LeaveFeedback from './../LeaveFeedback/LeaveFeedback';
 import TicketOverviewHistory from './../TicketOverview/TicketOverviewHistory/TicketOverviewHistory';
 import TicketOverviewComments from './../TicketOverview/TicketOverviewComments/TicketOverviewComments';
+import ViewFeedback from './../ViewFeedback/ViewFeedback';
 
 
 const AllTicket = (props) => {
@@ -32,6 +33,7 @@ const AllTicket = (props) => {
             <Route exact path='/history' component={TicketOverviewHistory}/>
             <Route exact path='/comments' component={TicketOverview}/>
             <Route exact path='/comments' component={TicketOverviewComments}/>
+            <Route exact path='/feedback' component={ViewFeedback}/>
             
 
         </div>

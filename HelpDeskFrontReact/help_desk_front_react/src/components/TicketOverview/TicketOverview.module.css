@@ -1,3 +1,11 @@
 .maincontainer{
     margin-top: 50px;
 }
+.AllButton{
+    border: 2px solid #1900ff; 
+    border-radius: 10px;
+    background: #00ffc8; 
+    font-size: 14px; 
+    padding: 5px 20px; 
+    margin: 10px 10px 10px 10px;
+}

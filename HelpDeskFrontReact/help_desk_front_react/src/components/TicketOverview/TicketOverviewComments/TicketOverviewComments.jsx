@@ -4,7 +4,7 @@ import style from './TicketOverviewComments.module.css';
 
 const TicketOverviewComments = (props) => {
     return (
-       <div>
+       <div className={style.maincontainer}>
            TicketOverviewComments
        </div>
     )

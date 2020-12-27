@@ -10,6 +10,10 @@ import Header from '../Header/Header';
 import TicketOverview from './../TicketOverview/TicketOverview';
 import EditTicket from './../EditTicket/EditTicket';
 import LeaveFeedback from './../LeaveFeedback/LeaveFeedback';
+import TicketOverviewHistory from './../TicketOverview/TicketOverviewHistory/TicketOverviewHistory';
+import TicketOverviewComments from './../TicketOverview/TicketOverviewComments/TicketOverviewComments';
+
+
 const AllTicket = (props) => {
     return (
         <BrowserRouter>
@@ -21,8 +25,15 @@ const AllTicket = (props) => {
             <Route exact path='/tablewithmyticket' component={TableWithMyTicket}/>
             <Route exact path='/createnewticket' component={CreateTicket}/>
             <Route exact path='/ticketoverview' component={TicketOverview}/>
+            <Route exact path='/ticketoverview' component={TicketOverviewHistory}/>
             <Route exact path='/edit' component={EditTicket}/>
             <Route exact path='/leavefeedback' component={LeaveFeedback}/>
+            <Route exact path='/history' component={TicketOverview}/>
+            <Route exact path='/history' component={TicketOverviewHistory}/>
+            <Route exact path='/comments' component={TicketOverview}/>
+            <Route exact path='/comments' component={TicketOverviewComments}/>
+            
+
         </div>
         </BrowserRouter>
     );

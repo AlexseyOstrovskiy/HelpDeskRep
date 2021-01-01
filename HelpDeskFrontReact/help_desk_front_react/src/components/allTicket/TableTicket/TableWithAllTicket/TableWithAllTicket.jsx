@@ -3,6 +3,8 @@ import { NavLink } from 'react-router-dom';
 import style from './TableWithAllTicket.module.css';
 
 const TableWithAllTicket = (props) => {
+
+
     return (
         <div className={style.style}>
             <h2>Table with all ticket!</h2>
@@ -15,6 +17,7 @@ const TableWithAllTicket = (props) => {
                     <td>Status</td>
                     <td>Action</td>
                 </tr>
+        
                 <tr>
                     <td>1 1</td>
                     <td>

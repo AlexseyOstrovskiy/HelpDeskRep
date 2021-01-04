@@ -13,25 +13,26 @@ import LeaveFeedback from './../LeaveFeedback/LeaveFeedback';
 import TicketOverviewHistory from './../TicketOverview/TicketOverviewHistory/TicketOverviewHistory';
 import TicketOverviewComments from './../TicketOverview/TicketOverviewComments/TicketOverviewComments';
 import ViewFeedback from './../ViewFeedback/ViewFeedback';
+import state from '../../redux/state';
 
 
 const AllTicket = (props) => {
-   
+   let state = props.state;
     return (
         <BrowserRouter>
         <div className={style.s}>
             {/* <Header /> */}
             <BtnAllTicket/>
-            <Route exact path='/allticket' component={TableWithAllTicket}/>
+            {/* <Route exact path='/allticket' component={TableWithAllTicket}/> */}
             {/* <Route exact path='/tablewithallticket' component={TableWithAllTicket}/> */}
           
             <Route exact path='/tablewithallticket' render=
-            {() => <TableWithAllTicket state={props.state}/>} />
+            {() => <TableWithAllTicket state={state}/>} />
 
             {/* <Route exact path='/tablewithmyticket' component={TableWithMyTicket}/> */}
 
             <Route exact path='/tablewithmyticket' render=
-            {() => <TableWithMyTicket state={props.state}/>} />
+            {() => <TableWithMyTicket state={state}/>} />
             
 
             

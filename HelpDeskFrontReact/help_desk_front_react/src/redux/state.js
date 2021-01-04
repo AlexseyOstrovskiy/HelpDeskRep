@@ -1,5 +1,5 @@
 let state ={
- ticketData:  {
+ 
     myTicketData : [
         {
             id:111,
@@ -53,6 +53,6 @@ let state ={
             action:"non"
                         }
                     ]
- }
+ 
 }
 export default state;

@@ -1,46 +1,16 @@
 import React from 'react';
 import style from './TableWithMyTicket.module.css';
+import NameItem from '../ItemsForTableWithTicket/NameItem';
+import IdItem from '../ItemsForTableWithTicket/IdItem';
+import DesiredDateItem from '../ItemsForTableWithTicket/DesiredDateItem';
+import UrgencyItem from '../ItemsForTableWithTicket/UrgencyItem';
+import StatusItem from '../ItemsForTableWithTicket/StatusItem';
+import ActionItem from '../ItemsForTableWithTicket/ActionItem';
 
 
 
 const TableWithMyTicket = (props) => {
     let state = props.state;
-
-    const NameItem = (props) => {
-        return (
-            <div>{props.name}</div>
-        )
-    }
-
-    const IdItem = (props) => {
-        return (
-            <div>{props.id}</div>
-        )
-    }
-
-    const DesiredDateItem = (props) => {
-        return (
-            <div>{props.desiredDate}</div>
-        )
-    }
-
-    const UrgencyItem = (props) => {
-        return (
-            <div>{props.urgency}</div>
-        )
-    }
-
-    const StatusItem = (props) => {
-        return (
-            <div>{props.status}</div>
-        )
-    }
-
-    const ActionItem = (props) => {
-        return (
-            <div>{props.action}</div>
-        )
-    }
 
     let idElements = state.myTicketData.map((i) => <IdItem id={i.id} />);
     let nameElements = state.myTicketData.map((n) => <NameItem name={n.name} />);

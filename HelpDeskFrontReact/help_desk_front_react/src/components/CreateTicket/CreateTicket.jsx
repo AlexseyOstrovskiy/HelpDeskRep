@@ -3,6 +3,24 @@ import style from './CreateTicket.module.css';
 import { NavLink } from 'react-router-dom';
 
 const CreateTicket = (props) => {
+    let addDescriptionRef = React.createRef();
+
+    let submitButtonOnClick = () => {
+        addName();
+        addDescription(); 
+    }
+
+    let addDescription = () => {
+        let textAddDescription = addDescriptionRef.current.value;
+        alert(textAddDescription);
+    }
+
+    let addNameRef = React.createRef();
+    let addName = () => {
+        let textAddName = addNameRef.current.value;
+        alert(textAddName);
+    }
+
     return (
         <div className={style.parent}>
             <NavLink exact to='/tablewithallticket' >Ticket List</NavLink>
@@ -25,13 +43,13 @@ const CreateTicket = (props) => {
                         <tr>
                             <td>Name:</td>
                             <td>
-                                <input type="text" id="name" ></input>
+                                <input type="text" id="name" ref={addNameRef}></input>
                             </td>
                         </tr>
                         <tr>
                             <td>Description:</td>
                             <td>
-                                <textarea placeholder="you description"></textarea>
+                                <textarea placeholder="you description" ref={addDescriptionRef}></textarea>
                             </td>
                         </tr>
                         <tr>
@@ -66,7 +84,7 @@ const CreateTicket = (props) => {
                 </table>
                 <p>
                     <button>Save as draft</button>
-                    <button>Submit</button>
+                    <button onClick={submitButtonOnClick} >Submit</button>
                 </p>
 
             </div>

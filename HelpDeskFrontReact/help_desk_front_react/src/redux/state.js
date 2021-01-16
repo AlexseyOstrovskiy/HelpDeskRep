@@ -9,7 +9,10 @@ let state ={
             desiredDate: "12.11.2020",
             urgency:"low",
             status:"kwo",
-            action:"done"
+            action:"done",
+            category:" ",
+            description:" ",
+            comment: " "
                 },
        {
             id:222,
@@ -17,7 +20,10 @@ let state ={
             desiredDate: "12.12.2020",
             urgency:"high",
             status:"kwo",
-            action:"non"
+            action:"non",
+            category:" ",
+            description:" ",
+            comment: " "
                 },
         {
             id:333,
@@ -25,7 +31,10 @@ let state ={
             desiredDate: "12.5.2020",
             urgency:"low",
             status:"kwokwo",
-            action:"non"
+            action:"non", 
+            category:" ",
+            description:" ",
+            comment: " "
                         }
                     ],
 
@@ -60,14 +69,17 @@ let state ={
     }   
 }
 
-export let addNewMyTicketFromState =(nameTicket)=>{
+export let addNewMyTicketFromState =(nameTicket,desiredDateTicket)=>{
     let newMyTicket ={
         id:1,
         name: nameTicket,
-        desiredDate: " ",
+        desiredDate: desiredDateTicket,
         urgency:"low",
         status:"kwokwo",
-        action:"non"
+        action:"non",
+        category:" ",
+        description:" ",
+        comment: " "
     }
     state.myTicketData.push(newMyTicket);
 

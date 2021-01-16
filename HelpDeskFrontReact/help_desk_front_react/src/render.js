@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import {updateNewDescription, addNewMyTicketFromState} from './redux/state';
+import {updateNewDescription, addNewMyTicketFromState}  from './redux/state';
 
 
 export let rerenderEntireTree =(state)=>{

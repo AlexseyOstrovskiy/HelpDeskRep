@@ -4,13 +4,15 @@ import { NavLink } from 'react-router-dom';
 
 const CreateTicket = (props) => {
     let addDescriptionRef = React.createRef();
+    let addNameRef = React.createRef();
+    let desiredDateRef = React.createRef();
 
     let submitButtonOnClick = () => {
         let textAddName = addNameRef.current.value;
+        VarDate = desiredDateRef.current.value;
+        props.addNewMyTicketFromState(textAddName,  VarDate );
+        console.log( VarDate);
        
-        props.addNewMyTicketFromState(textAddName)
-        // addName();
-        // addDescription();
     }
 
     let addDescription = () => {
@@ -18,7 +20,7 @@ const CreateTicket = (props) => {
         alert(textAddDescription);
     }
 
-    let addNameRef = React.createRef();
+    
     let addName = () => {
         let textAddName = addNameRef.current.value;
         alert(textAddName);
@@ -71,7 +73,7 @@ const CreateTicket = (props) => {
                         <tr>
                             <td>Desired resolution date:</td>
                             <td>
-                                <input type="date" id="name" ></input>
+                                <input type="date" id="name" ref={desiredDateRef} ></input>
                             </td>
                         </tr>
                         <tr>

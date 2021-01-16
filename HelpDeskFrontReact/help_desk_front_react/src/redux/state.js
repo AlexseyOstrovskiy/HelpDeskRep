@@ -1,3 +1,5 @@
+import { rerenderEntireTree } from "../render";
+
 let state ={
  
     myTicketData : [
@@ -52,7 +54,28 @@ let state ={
             status:"kwokwo",
             action:"non"
                         }
-                    ]
- 
+                    ],
+    creatTicketData: {
+        newDescriptionText: 'input new Description now'
+    }   
 }
+
+export let addNewMyTicketFromState =(nameTicket)=>{
+    let newMyTicket ={
+        id:1,
+        name: nameTicket,
+        desiredDate: " ",
+        urgency:"low",
+        status:"kwokwo",
+        action:"non"
+    }
+    state.myTicketData.push(newMyTicket);
+
+}
+
+export let updateNewDescription =  (newDescriptionText)=>{
+        state.creatTicketData.newDescriptionText = newDescriptionText;
+        rerenderEntireTree(state);
+}
+
 export default state;

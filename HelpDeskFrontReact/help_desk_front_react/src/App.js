@@ -14,7 +14,10 @@ function App(props) {
         {/* <Route exact path='/allticket' component={AllTicket} state={props.state}/> */}
 
         <Route exact path='/allticket' render=
-         {() => <AllTicket state={props.state}/>}/>
+         {() => <AllTicket state={props.state}
+         updateNewDescription ={props.updateNewDescription}
+         addNewMyTicketFromState={props.addNewMyTicketFromState}
+                        />}/>
 
         {/* <Route path='/allticket' component={AllTicket} />
         <Route path='/createnewticket' component={CreateTicket}/> */}

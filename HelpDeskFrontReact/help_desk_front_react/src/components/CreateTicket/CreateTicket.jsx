@@ -6,8 +6,11 @@ const CreateTicket = (props) => {
     let addDescriptionRef = React.createRef();
 
     let submitButtonOnClick = () => {
-        addName();
-        addDescription(); 
+        let textAddName = addNameRef.current.value;
+       
+        props.addNewMyTicketFromState(textAddName)
+        // addName();
+        // addDescription();
     }
 
     let addDescription = () => {
@@ -20,7 +23,10 @@ const CreateTicket = (props) => {
         let textAddName = addNameRef.current.value;
         alert(textAddName);
     }
-
+    let onAddDescription = () =>{
+        let text = addDescriptionRef.current.value;
+        props.updateNewDescription(text);
+    }
     return (
         <div className={style.parent}>
             <NavLink exact to='/tablewithallticket' >Ticket List</NavLink>
@@ -49,7 +55,7 @@ const CreateTicket = (props) => {
                         <tr>
                             <td>Description:</td>
                             <td>
-                                <textarea placeholder="you description" ref={addDescriptionRef}></textarea>
+                                <textarea placeholder="you description" ref={addDescriptionRef} onChange={onAddDescription} value={props.creatTicketData.newDescriptionText}></textarea>
                             </td>
                         </tr>
                         <tr>

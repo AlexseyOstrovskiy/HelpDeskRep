@@ -4,7 +4,7 @@ let state ={
  
     myTicketData : [
         {
-            id:111,
+            id:1,
             name:"SomeNameMyTicket1",
             desiredDate: "12.11.2020",
             urgency:"low",
@@ -15,7 +15,7 @@ let state ={
             comment: " "
                 },
        {
-            id:222,
+            id:2,
             name:"SomeNameMyTicket2",
             desiredDate: "12.12.2020",
             urgency:"high",
@@ -26,7 +26,7 @@ let state ={
             comment: " "
                 },
         {
-            id:333,
+            id:3,
             name:"SomeNameMyTicket3",
             desiredDate: "12.5.2020",
             urgency:"low",
@@ -69,12 +69,12 @@ let state ={
     }   
 }
 
-export let addNewMyTicketFromState =(nameTicket,desiredDateTicket)=>{
+export let addNewMyTicketFromState =(nameTicket,desiredDateTicket, urgencyUrgency)=>{
     let newMyTicket ={
-        id:1,
+        id:idNext,
         name: nameTicket,
         desiredDate: desiredDateTicket,
-        urgency:"low",
+        urgency:urgencyUrgency,
         status:"kwokwo",
         action:"non",
         category:" ",

@@ -6,12 +6,20 @@ const CreateTicket = (props) => {
     let addDescriptionRef = React.createRef();
     let addNameRef = React.createRef();
     let desiredDateRef = React.createRef();
+    let urgencyRef =React.createRef();
+    let statusRef= React.createRef();
+    let actionRef = React.createRef();
+    let categoryRef = React.createRef();
+    let descriptionRef = React.createRef();
+    let commentRef = React.createRef();
 
+    
     let submitButtonOnClick = () => {
         let textAddName = addNameRef.current.value;
-        VarDate = desiredDateRef.current.value;
-        props.addNewMyTicketFromState(textAddName,  VarDate );
-        console.log( VarDate);
+        let dataDesiredData = desiredDateRef.current.value;
+        let urgencyUrgency = urgencyRef.current.value;
+        props.addNewMyTicketFromState(textAddName, dataDesiredData, urgencyUrgency );
+        console.log(dataDesiredData,urgencyUrgency)
        
     }
 
@@ -63,17 +71,18 @@ const CreateTicket = (props) => {
                         <tr>
                             <td>Urgency:</td>
                             <td>
-                                <select>
-                                    <option>High</option>
-                                    <option>Average</option>
-                                    <option>Low</option>
+                                <select id='selectUrgencyId' ref={urgencyRef}>
+                                    <option value='High'>High</option>
+                                    <option value='Average'>Average</option>
+                                    <option value='Low'>Low</option>
                                 </select>
                             </td>
                         </tr>
                         <tr>
                             <td>Desired resolution date:</td>
                             <td>
-                                <input type="date" id="name" ref={desiredDateRef} ></input>
+                                <input type="Date" id="name" ref={desiredDateRef} ></input>
+                                {/* поменять вид представления даты */}
                             </td>
                         </tr>
                         <tr>

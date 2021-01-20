@@ -1,16 +1,16 @@
 import React from 'react';
 import style from './CreateTicket.module.css';
 import { NavLink } from 'react-router-dom';
+import state from '../../redux/state';
 
 const CreateTicket = (props) => {
     let addDescriptionRef = React.createRef();
     let addNameRef = React.createRef();
     let desiredDateRef = React.createRef();
     let urgencyRef =React.createRef();
-    let statusRef= React.createRef();
-    let actionRef = React.createRef();
-    let categoryRef = React.createRef();
-    let descriptionRef = React.createRef();
+    // let statusRef= React.createRef();
+    // let actionRef = React.createRef();
+    let myCategoryRef = React.createRef();
     let commentRef = React.createRef();
 
     
@@ -18,25 +18,31 @@ const CreateTicket = (props) => {
         let textAddName = addNameRef.current.value;
         let dataDesiredData = desiredDateRef.current.value;
         let urgencyUrgency = urgencyRef.current.value;
-        props.addNewMyTicketFromState(textAddName, dataDesiredData, urgencyUrgency );
-        console.log(dataDesiredData,urgencyUrgency)
+        let categoryCategory = myCategoryRef.current.value;
+        let textAddDescription = addDescriptionRef.current.value;
+        let textAddComment = commentRef.current.value;
+        props.addNewMyTicketFromState(
+            textAddName, dataDesiredData,
+             urgencyUrgency,categoryCategory
+            , textAddDescription,textAddComment );
+        alert("New Ticket created");
        
     }
 
-    let addDescription = () => {
-        let textAddDescription = addDescriptionRef.current.value;
-        alert(textAddDescription);
-    }
+    // let addDescription = () => {
+    //     let textAddDescription = addDescriptionRef.current.value;
+    //     alert(textAddDescription);
+    // }
 
     
-    let addName = () => {
-        let textAddName = addNameRef.current.value;
-        alert(textAddName);
-    }
-    let onAddDescription = () =>{
-        let text = addDescriptionRef.current.value;
-        props.updateNewDescription(text);
-    }
+    // let addName = () => {
+    //     let textAddName = addNameRef.current.value;
+    //     alert(textAddName);
+    // }
+    // let onAddDescription = () =>{
+    //     let text = addDescriptionRef.current.value;
+    //     props.updateNewDescription(text);
+    // }
     return (
         <div className={style.parent}>
             <NavLink exact to='/tablewithallticket' >Ticket List</NavLink>
@@ -48,11 +54,11 @@ const CreateTicket = (props) => {
                         <tr>
                             <td>Category:</td>
                             <td>
-                                <select>
-                                    <option>Technical assistance</option>
-                                    <option>Chancery</option>
-                                    <option>Need to talk!</option>
-                                    <option>I want beer and pizza!</option>
+                                <select id='selectCategoryId' ref= {myCategoryRef}>
+                                    <option value='Technical assistance'>Technical assistance</option>
+                                    <option value='Chancery'>Chancery</option>
+                                    <option value='Need to talk!'>Need to talk!</option>
+                                    <option value='I want beer and pizza!'>I want beer and pizza!</option>
                                 </select>
                             </td>
                         </tr>
@@ -65,7 +71,7 @@ const CreateTicket = (props) => {
                         <tr>
                             <td>Description:</td>
                             <td>
-                                <textarea placeholder="you description" ref={addDescriptionRef} onChange={onAddDescription} value={props.creatTicketData.newDescriptionText}></textarea>
+                                <textarea placeholder="you description" ref={addDescriptionRef} ></textarea>
                             </td>
                         </tr>
                         <tr>
@@ -94,7 +100,7 @@ const CreateTicket = (props) => {
                         <tr>
                             <td>Comment:</td>
                             <td>
-                                <textarea placeholder="you comment"></textarea>
+                                <textarea placeholder="you comment" ref={commentRef}></textarea>
                             </td>
                         </tr>
                     </tbody>

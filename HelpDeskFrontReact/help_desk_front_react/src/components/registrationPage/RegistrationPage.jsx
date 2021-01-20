@@ -7,11 +7,11 @@ const RegistrationPage = (props) => {
         <div className={style.registrationForm} >
             <h1>Login to the HelpDesk</h1>
             <p>
-                <label for="UserName">UserName:</label>
+                <label htmlFor="UserName">UserName:</label>
                 <input type="text" id="username" ></input>
             </p>
             <p>
-                <label for="Password">Password:</label>
+                <label htmlFor="Password">Password:</label>
                 <input type="text" id="password" ></input>
             </p>
             <button>Enter</button>

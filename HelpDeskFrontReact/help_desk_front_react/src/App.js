@@ -2,8 +2,7 @@ import './App.css';
 import RegistrationPage from './components/RegistrationPage/RegistrationPage';
 import { BrowserRouter, Route } from 'react-router-dom';
 import AllTicket from './components/allTicket/AllTicket';
-import CreateTicket from './components/CreateTicket/CreateTicket';
-import TableWithMyTicket from './components/allTicket/TableTicket/TableWithMyTicket/TableWithMyTicket';
+
 
 function App(props) {
 

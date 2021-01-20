@@ -69,17 +69,20 @@ let state ={
     }   
 }
 
-export let addNewMyTicketFromState =(nameTicket,desiredDateTicket, urgencyUrgency)=>{
+export let addNewMyTicketFromState =
+    (nameTicket,desiredDateTicket, urgencyUrgency,
+     categoryCategory, textAddDescription,textAddComment
+     )=>{
     let newMyTicket ={
-        id:idNext,
+        id:state.myTicketData.length+1,
         name: nameTicket,
         desiredDate: desiredDateTicket,
         urgency:urgencyUrgency,
         status:"kwokwo",
         action:"non",
-        category:" ",
-        description:" ",
-        comment: " "
+        category:categoryCategory,
+        description:textAddDescription,
+        comment: textAddComment
     }
     state.myTicketData.push(newMyTicket);
 

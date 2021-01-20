@@ -65,7 +65,15 @@ let state ={
                         }
                     ],
     creatTicketData: {
-        newDescriptionText: 'input new Description now'
+        nameFromState: 'someNamefromState',
+        desiredDateFromState: '',
+        urgencyFromState: 'some urgency from state',
+        statusFromState: 'some status from state',
+        actionFromState: 'some action fro state',
+        categoryFromState: 'some category from state',
+        descriptionFromState: 'input new Description now',
+        commentFromState:'some comment from state'
+
     }   
 }
 
@@ -88,6 +96,11 @@ export let addNewMyTicketFromState =
 
 }
 
+export let updateNewName =(changedName) =>{
+    state.creatTicketData.nameFromState = changedName;
+    console.log(state.creatTicketData.nameFromState);
+    rerenderEntireTree(state);
+}
 export let updateNewDescription =  (newDescriptionText)=>{
         state.creatTicketData.newDescriptionText = newDescriptionText;
         rerenderEntireTree(state);

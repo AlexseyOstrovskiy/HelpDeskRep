@@ -29,20 +29,11 @@ const CreateTicket = (props) => {
        
     }
 
-    // let addDescription = () => {
-    //     let textAddDescription = addDescriptionRef.current.value;
-    //     alert(textAddDescription);
-    // }
-
+    let nameChange = () =>{
+        let changedName = addNameRef.current.value;
+        props.updateNewName(changedName);
+    }
     
-    // let addName = () => {
-    //     let textAddName = addNameRef.current.value;
-    //     alert(textAddName);
-    // }
-    // let onAddDescription = () =>{
-    //     let text = addDescriptionRef.current.value;
-    //     props.updateNewDescription(text);
-    // }
     return (
         <div className={style.parent}>
             <NavLink exact to='/tablewithallticket' >Ticket List</NavLink>
@@ -65,7 +56,7 @@ const CreateTicket = (props) => {
                         <tr>
                             <td>Name:</td>
                             <td>
-                                <input type="text" id="name" ref={addNameRef}></input>
+                                <input type="text" id="name" value={props.creatTicketData.nameFromState} onChange={nameChange} ref={addNameRef}></input>
                             </td>
                         </tr>
                         <tr>

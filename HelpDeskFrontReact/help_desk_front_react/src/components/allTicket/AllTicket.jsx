@@ -40,6 +40,7 @@ const AllTicket = (props) => {
             {() => <CreateTicket    creatTicketData = {state.creatTicketData}
                                     updateNewDescription={props.updateNewDescription}
                                     addNewMyTicketFromState={props.addNewMyTicketFromState}
+                                    updateNewName = {props.updateNewName}
             />}/>
             
             <Route exact path='/ticketoverview' component={TicketOverview}/>

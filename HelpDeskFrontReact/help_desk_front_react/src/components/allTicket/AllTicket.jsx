@@ -37,10 +37,14 @@ const AllTicket = (props) => {
 
             
             <Route exact path='/createnewticket' render= 
-            {() => <CreateTicket    creatTicketData = {state.creatTicketData}
+            {() => <CreateTicket    
+                                    state = {props.state}
+                                    // creatTicketData = {state.creatTicketData}
                                     updateNewDescription={props.updateNewDescription}
                                     addNewMyTicketFromState={props.addNewMyTicketFromState}
                                     updateNewName = {props.updateNewName}
+                                    updateNewDescription = {props.updateNewDescription}
+                                    updateNewComment = {props.updateNewComment}
             />}/>
             
             <Route exact path='/ticketoverview' component={TicketOverview}/>

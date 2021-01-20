@@ -7,45 +7,50 @@ const CreateTicket = (props) => {
     let addDescriptionRef = React.createRef();
     let addNameRef = React.createRef();
     let desiredDateRef = React.createRef();
-    let urgencyRef =React.createRef();
+    let urgencyRef = React.createRef();
     // let statusRef= React.createRef();
     // let actionRef = React.createRef();
     let myCategoryRef = React.createRef();
     let commentRef = React.createRef();
 
-    
+
     let submitButtonOnClick = () => {
-        let textAddName = addNameRef.current.value;
         let dataDesiredData = desiredDateRef.current.value;
         let urgencyUrgency = urgencyRef.current.value;
         let categoryCategory = myCategoryRef.current.value;
-        let textAddDescription = addDescriptionRef.current.value;
-        let textAddComment = commentRef.current.value;
         props.addNewMyTicketFromState(
-            textAddName, dataDesiredData,
-             urgencyUrgency,categoryCategory
-            , textAddDescription,textAddComment );
+            dataDesiredData,
+            urgencyUrgency, categoryCategory
+            );
         alert("New Ticket created");
-       
     }
 
-    let nameChange = () =>{
+    let nameChange = () => {
         let changedName = addNameRef.current.value;
         props.updateNewName(changedName);
     }
-    
+
+    let descriptionChange = () => {
+        let changedDescription = addDescriptionRef.current.value;
+        props.updateNewDescription(changedDescription);
+    }
+
+    let commentChange = () =>{
+        let changedComment = commentRef.current.value;
+        props.updateNewComment(changedComment);
+    }
+
     return (
         <div className={style.parent}>
             <NavLink exact to='/tablewithallticket' >Ticket List</NavLink>
             <div className={style.CreateTicketMainContainer}>
                 <h1>Create new Ticket!</h1>
-
                 <table >
                     <tbody>
                         <tr>
                             <td>Category:</td>
                             <td>
-                                <select id='selectCategoryId' ref= {myCategoryRef}>
+                                <select id='selectCategoryId' ref={myCategoryRef}>
                                     <option value='Technical assistance'>Technical assistance</option>
                                     <option value='Chancery'>Chancery</option>
                                     <option value='Need to talk!'>Need to talk!</option>
@@ -56,13 +61,13 @@ const CreateTicket = (props) => {
                         <tr>
                             <td>Name:</td>
                             <td>
-                                <input type="text" id="name" value={props.creatTicketData.nameFromState} onChange={nameChange} ref={addNameRef}></input>
+                                <input type="text" id="name" value={props.state.creatTicketData.nameFromState} onChange={nameChange} ref={addNameRef}></input>
                             </td>
                         </tr>
                         <tr>
                             <td>Description:</td>
                             <td>
-                                <textarea placeholder="you description" ref={addDescriptionRef} ></textarea>
+                                <textarea placeholder="you description" ref={addDescriptionRef} value={props.state.creatTicketData.descriptionFromState} onChange={descriptionChange}  ></textarea>
                             </td>
                         </tr>
                         <tr>
@@ -91,7 +96,7 @@ const CreateTicket = (props) => {
                         <tr>
                             <td>Comment:</td>
                             <td>
-                                <textarea placeholder="you comment" ref={commentRef}></textarea>
+                                <textarea  ref={commentRef} value={props.state.creatTicketData.commentFromState} onChange={commentChange}></textarea>
                             </td>
                         </tr>
                     </tbody>

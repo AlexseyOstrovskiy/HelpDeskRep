@@ -8,10 +8,11 @@ import App from './App';
     ReactDOM.render(
       <React.StrictMode>
         <App state={state}
-              updateNewDescription = {store.updateNewDescription}
-              addNewMyTicketFromState = {store.addNewMyTicketFromState}
-              updateNewName = {store.updateNewName}
-              updateNewComment = {store.updateNewComment}
+              dispatch={store.dispatch.bind(store)}
+              // updateNewDescription = {store.updateNewDescription}
+              // addNewMyTicketFromState = {store.addNewMyTicketFromState}
+              // updateNewName = {store.updateNewName}
+              // updateNewComment = {store.updateNewComment}
         />
       </React.StrictMode>,
       document.getElementById('root')

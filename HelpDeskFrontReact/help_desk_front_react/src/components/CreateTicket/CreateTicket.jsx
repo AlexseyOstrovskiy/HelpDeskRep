@@ -1,7 +1,7 @@
 import React from 'react';
 import style from './CreateTicket.module.css';
 import { NavLink } from 'react-router-dom';
-import state from '../../redux/state';
+import state, { addNewMyTicketFromStateActionCreator, updateNewCommentActionCreator, updateNewDescriptionActionCreator, updateNewNameActionCreator } from '../../redux/state';
 
 const CreateTicket = (props) => {
     let addDescriptionRef = React.createRef();
@@ -18,26 +18,31 @@ const CreateTicket = (props) => {
         let dataDesiredData = desiredDateRef.current.value;
         let urgencyUrgency = urgencyRef.current.value;
         let categoryCategory = myCategoryRef.current.value;
-        props.addNewMyTicketFromState(
-            dataDesiredData,
-            urgencyUrgency, categoryCategory
-            );
+        props.dispatch(addNewMyTicketFromStateActionCreator(dataDesiredData,
+        urgencyUrgency, categoryCategory))
+        // props.addNewMyTicketFromState(
+        //     dataDesiredData,
+        //     urgencyUrgency, categoryCategory
+        //     );
         alert("New Ticket created");
     }
 
     let nameChange = () => {
         let changedName = addNameRef.current.value;
-        props.updateNewName(changedName);
+        props.dispatch(updateNewNameActionCreator(changedName))
+        // props.updateNewName(changedName);
     }
 
     let descriptionChange = () => {
         let changedDescription = addDescriptionRef.current.value;
-        props.updateNewDescription(changedDescription);
+        props.dispatch(updateNewDescriptionActionCreator(changedDescription))
+        // props.updateNewDescription(changedDescription);
     }
 
     let commentChange = () =>{
         let changedComment = commentRef.current.value;
-        props.updateNewComment(changedComment);
+        props.dispatch(updateNewCommentActionCreator(changedComment))
+        // props.updateNewComment(changedComment);
     }
 
     return (

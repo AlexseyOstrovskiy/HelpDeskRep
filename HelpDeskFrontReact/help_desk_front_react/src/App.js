@@ -11,11 +11,12 @@ function App(props) {
         <Route exact path='/' component={RegistrationPage} />
         <Route exact path='/allticket' render=
          {() => <AllTicket state={props.state}
-         updateNewDescription ={props.updateNewDescription}
-         addNewMyTicketFromState={props.addNewMyTicketFromState}
-         updateNewName = {props.updateNewName}
-         updateNewDescription = {props.updateNewDescription}
-         updateNewComment= {props.updateNewComment}
+         dispatch={props.dispatch}
+        //  updateNewDescription ={props.updateNewDescription}
+        //  addNewMyTicketFromState={props.addNewMyTicketFromState}
+        //  updateNewName = {props.updateNewName}
+        //  updateNewDescription = {props.updateNewDescription}
+        //  updateNewComment= {props.updateNewComment}
                         />}/>
       </div> 
     </BrowserRouter>

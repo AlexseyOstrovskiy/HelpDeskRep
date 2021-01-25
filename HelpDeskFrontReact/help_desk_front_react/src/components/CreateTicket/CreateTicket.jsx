@@ -1,7 +1,8 @@
 import React from 'react';
 import style from './CreateTicket.module.css';
 import { NavLink } from 'react-router-dom';
-import state, { addNewMyTicketFromStateActionCreator, updateNewCommentActionCreator, updateNewDescriptionActionCreator, updateNewNameActionCreator } from '../../redux/state';
+import state, { addNewMyTicketFromStateActionCreator, updateNewCommentActionCreator, updateNewDescriptionActionCreator, updateNewNameActionCreator } from '../../redux/createTicketDataReducer';
+
 
 const CreateTicket = (props) => {
     let addDescriptionRef = React.createRef();

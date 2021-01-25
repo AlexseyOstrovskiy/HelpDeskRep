@@ -1,7 +1,6 @@
-const ADD_NEW_MY_TICKET_FROM_STATE = 'ADD-NEW-MY-TICKET-FROM-STATE';
-const UPDATE_NEW_NAME = 'UPDATE-NEW-NAME';
-const UPDATE_NEW_DESCRIPTION ='UPDATE-NEW_DESCRIPTION';
-const UPDATE_NEW_COMMENT = 'UPDATE-NEW-COMMENT';
+import createTicketReducer from '../redux/createTicketDataReducer';
+import allTicketReducer from '../redux/allTicketDataReducer';
+import myTicketReducer from '../redux/myTicketDataReducer';
 
 let store = {
    _state : {
@@ -68,7 +67,9 @@ let store = {
                 action: "non"
             }
         ],
+       
         creatTicketData: {
+            id: '',
             nameFromState: 'someNamefromState',
             desiredDateFromState: '',
             urgencyFromState: 'some urgency from state',
@@ -79,6 +80,7 @@ let store = {
             commentFromState: 'some comment from state'
     
         }
+        
     }, 
     _callSubscriber () {
         console.log('State was change')
@@ -89,41 +91,48 @@ let store = {
     getState(){
         return this._state
     },
-
-    dispatch(action){
-        if (action.type === ADD_NEW_MY_TICKET_FROM_STATE){
-            let newMyTicket = {
-                id: this._state.myTicketData.length + 1,
     
-                name: this._state.creatTicketData.nameFromState,
-                desiredDate: action.desiredDateTicket,
-                urgency: action.urgencyUrgency,
-                status: "kwokwo",
-                action: "non",
-                category: action.categoryCategory,
-                description: this._state.creatTicketData.descriptionFromState,
-                comment: this._state.creatTicketData.commentFromState
-            };
-            this._state.myTicketData.push(newMyTicket);
-        }
-        else if(action.type === UPDATE_NEW_NAME){
-            this._state.creatTicketData.nameFromState = action.changedName;
-            console.log(this._state.creatTicketData.nameFromState);
-            this._callSubscriber(this._state);
-        }
-        else if(action.type === UPDATE_NEW_DESCRIPTION){
-              this._state.creatTicketData.descriptionFromState = action.changedDescription;
-        console.log(this._state.creatTicketData.descriptionFromState);
+    dispatch(action){
+        // this._state.creatTicketData = createTicketReducer(this._state.creatTicketData, action);
+        let newMyTicket = createTicketReducer(this._state.creatTicketData, action);
+        this._state.myTicketData.push(newMyTicket);
+        this._state.myTicketData = myTicketReducer(this._state.myTicketData, action);
+        this._state.allTicketData = allTicketReducer(this._state.allTicketData, action);
         this._callSubscriber(this._state);
-        }
-        else if(action.type === UPDATE_NEW_COMMENT){
-            this._state.creatTicketData.commentFromState = action.changedComment;
-            console.log(this._state.creatTicketData.commentFromState);
-            this._callSubscriber(this._state);
-        }
+
+        // if (action.type === ADD_NEW_MY_TICKET_FROM_STATE){
+        //     let newMyTicket = {
+        //         id: this._state.creatTicketData.id,
+        //         name: this._state.creatTicketData.nameFromState,
+        //         desiredDate: action.desiredDateTicket,
+        //         urgency: action.urgencyUrgency,
+        //         status: "kwokwo",
+        //         action: "non",
+        //         category: action.categoryCategory,
+        //         description: this._state.creatTicketData.descriptionFromState,
+        //         comment: this._state.creatTicketData.commentFromState
+        //     };
+        //     this._state.myTicketData.push(newMyTicket);
+        // }
+        // else if(action.type === UPDATE_NEW_NAME){
+        //     this._state.creatTicketData.nameFromState = action.changedName;
+        //     console.log(this._state.creatTicketData.nameFromState);
+        //     this._callSubscriber(this._state);
+        // }
+        // else if(action.type === UPDATE_NEW_DESCRIPTION){
+        //       this._state.creatTicketData.descriptionFromState = action.changedDescription;
+        // console.log(this._state.creatTicketData.descriptionFromState);
+        // this._callSubscriber(this._state);
+        // }
+        // else if(action.type === UPDATE_NEW_COMMENT){
+        //     this._state.creatTicketData.commentFromState = action.changedComment;
+        //     console.log(this._state.creatTicketData.commentFromState);
+        //     this._callSubscriber(this._state);
+        // }
+        
 
     }
-    // addNewMyTicketFromState (desiredDateTicket, urgencyUrgency,categoryCategory)  {
+        // addNewMyTicketFromState (desiredDateTicket, urgencyUrgency,categoryCategory)  {
     //     let newMyTicket = {
     //         id: this._state.myTicketData.length + 1,
 
@@ -155,6 +164,7 @@ let store = {
     //     this._callSubscriber(this._state);
     // }
 }
+
 
 // let rerenderEntireTree = () =>{
 //     console.log('State was change')
@@ -280,36 +290,8 @@ let store = {
 //     rerenderEntireTree = observer;
 // }
 
-export const addNewMyTicketFromStateActionCreator = (desiredDateTicket, urgencyUrgency,categoryCategory) =>{
-    return{
-        type:ADD_NEW_MY_TICKET_FROM_STATE,
-        desiredDateTicket:desiredDateTicket,
-        urgencyUrgency:urgencyUrgency,
-        categoryCategory:categoryCategory
-    }
-}
-
-export const updateNewNameActionCreator = (changedName) =>{
-    return{
-        type:UPDATE_NEW_NAME,
-        changedName:changedName
-    }
-}
-
-export const updateNewDescriptionActionCreator = (changedDescription) =>{
-    return{
-        type:UPDATE_NEW_DESCRIPTION,
-        changedDescription:changedDescription
-    }
-}
-
-export const updateNewCommentActionCreator = (changedComment) =>{
-    return{
-        type:UPDATE_NEW_COMMENT,
-        changedComment:changedComment
-    }
-}
 
 
+// let idCreateTicketData = this._state.myTicketData.length + 1;
 export default store;
 window.store =store;

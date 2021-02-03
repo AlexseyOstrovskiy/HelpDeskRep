@@ -83,7 +83,7 @@ const CreateTicket = (props) => {
                                     <option value='High'>High</option>
                                     <option value='Average'>Average</option>
                                     <option value='Low'>Low</option>
-                                </select>
+                                </select>   
                             </td>
                         </tr>
                         <tr>
